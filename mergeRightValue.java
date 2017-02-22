@@ -40,9 +40,12 @@ public class mergeRightValue {
         char[] strChar = a.toCharArray();
         char[] Char = b.toCharArray();
         StringBuilder result = new StringBuilder();
-
+        String e="";
         for (int i = 0; i < strChar.length; i++) {
-            String e = String.valueOf((Integer.parseInt(String.valueOf(strChar[i])) | Integer.parseInt(String.valueOf(Char[i]))));
+//            String e = String.valueOf((Long.parseLong(String.valueOf(strChar[i])) | Long.parseLong(String.valueOf(Char[i]))));
+           if (String.valueOf(strChar[i]).equalsIgnoreCase("0")&&String.valueOf(Char[i]).equalsIgnoreCase("0")){
+                e="0";
+           }else { e="1";};
             result.append(e);
         }
         return result;
@@ -50,7 +53,8 @@ public class mergeRightValue {
 
     public static void main(String[] args) {
         mergeRightValue m = new mergeRightValue();
-        System.out.println( m.mergeRightValue("100001", "0100000","00100","00010","00001"));
+        System.out.println( m.mergeRightValue("10000000000000000000000000000000000000000000000 ","111000000000000000000000000000000000000000000000000000000000000000000000000000000"
+        ));
     }
 }
 
